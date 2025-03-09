@@ -12,7 +12,14 @@
             </a-form-item>
           </a-space>
         </div>
-        <v-pop/>
+
+        <a-space>
+          <div class="github">
+            <github-outlined style="font-size: 24px;"/>
+          </div>
+          <v-pop/>
+        </a-space>
+
       </div>
       <v-table init="/ad/cats/list" :sticky="{offsetHeader:0}">
         <template #bodyCell="{ column, record }">
@@ -42,8 +49,15 @@
 import {initTable} from "@/table";
 import {ConfigProvider as aConfigProvider} from "ant-design-vue";
 import zhCN from "ant-design-vue/es/locale/zh_CN";
+import {GithubOutlined} from '@ant-design/icons-vue';
 
 
+/**
+ * open
+ */
+const open = () => {
+  window.open('https://github.com/friend-nicen/table', '_blank');
+}
 /*
 * 初始化表头
 * */
@@ -131,6 +145,11 @@ body {
   background-color: #f5f5f5;
 }
 
+
+.ant-form-item {
+  margin-bottom: 0 !important;
+}
+
 .demo {
   background-color: white;
   margin: 20px 10vw;
@@ -140,6 +159,11 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .github {
+    cursor: pointer;
   }
 }
 </style>
